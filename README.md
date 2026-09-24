@@ -24,3 +24,29 @@ AWS EC2
 │       │ localhost:27017
 │       ↓
 └── MongoDB Docker Container
+
+
+# Docker Practice — Node.js + MongoDB on AWS EC2
+
+This project is a hands-on Docker practice project where I containerized a Node.js/Express e-commerce API and MongoDB and connected them using a Docker network.
+
+The project was deployed and tested on an AWS EC2 instance.
+
+## Architecture
+
+```text
+                    AWS EC2
+                       |
+              +--------+--------+
+              |                 |
+         Node.js API        MongoDB
+         Container          Container
+          :5000              :27017
+              |                 |
+              +-------+---------+
+                      |
+                Docker Network
+                  my-network
+                      |
+                mongodb-data
+                 Docker Volume
